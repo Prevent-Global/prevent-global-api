@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "dab895ac-f408-4eb4-b97d-d067b3a4cf73",
+		"_postman_id": "31a6b54b-9eb0-4922-8397-d6162fa70dfb",
 		"name": "Prevent.Global Mobile API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -41,17 +41,11 @@
 					"raw": "{\"recentTest\":\"positive\"}"
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/user/register",
-					"protocol": "http",
+					"raw": "{{serverUrl}}api/user/register",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{serverUrl}}api"
 					],
-					"port": "8000",
 					"path": [
-						"api",
 						"user",
 						"register"
 					]
@@ -61,6 +55,21 @@
 		},
 		{
 			"name": "Upload KML File",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fc293dc6-b415-478c-8f3a-e10c512b721f",
+						"exec": [
+							"",
+							"pm.test(\"Creates User With Id\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -76,7 +85,7 @@
 						{
 							"key": "locationHistory",
 							"type": "file",
-							"src": "./testData/history-2016-10-17.kml"
+							"src": "testData/history-2016-10-17.kml"
 						},
 						{
 							"key": "userId",
@@ -86,17 +95,11 @@
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/kml/upload",
-					"protocol": "http",
+					"raw": "{{serverUrl}}api/kml/upload",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{serverUrl}}api"
 					],
-					"port": "8000",
 					"path": [
-						"api",
 						"kml",
 						"upload"
 					]
