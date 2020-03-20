@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "dab895ac-f408-4eb4-b97d-d067b3a4cf73",
+		"name": "Prevent.Global Mobile API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register user information",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20c80095-f908-4773-9312-007a6a6642c1",
+						"exec": [
+							"",
+							"pm.test(\"Creates User With Id\", function () {",
+							"    var jsonData = pm.response.json(); ",
+							"    ",
+							"    pm.response.to.have.status(200);",
+							"    pm.expect(jsonData.id.length > 0).to.be.true;",
+							"    ",
+							"    pm.variables.set(\"userId\", jsonData.id);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"recentTest\":\"positive\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload KML File",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "locationHistory",
+							"type": "file",
+							"src": "./testData/history-2016-10-17.kml"
+						},
+						{
+							"key": "userId",
+							"value": "{{userId}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/kml/upload",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"kml",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
