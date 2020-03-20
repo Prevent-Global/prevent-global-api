@@ -27,6 +27,7 @@ class KmlUploadController
             if (!$file) {
                 return new Response(json_encode(["error" => "Expected KML file missing"]), Response::HTTP_BAD_REQUEST);
             }
+
             $kmlFileUploader->saveFile($userId, $file);
             return new Response(null, Response::HTTP_CREATED);
 

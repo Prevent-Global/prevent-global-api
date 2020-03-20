@@ -22,6 +22,9 @@ class UserController
             $requestContent = json_decode($request->getContent(), true);
 
             $recentTest = $requestContent['recentTest'];
+            if($recentTest == null) {
+                return new Response(json_encode(["error" => "Value for recentTest not specified"]), Response::HTTP_BAD_REQUEST);
+            }
 
             $userInfo = UserInfo::createNew($recentTest);
 

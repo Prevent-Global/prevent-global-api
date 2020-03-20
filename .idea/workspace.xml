@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2523689f-8ad6-482b-af81-613481bd6588" name="Default Changelist" comment="" />
+    <list default="true" id="2523689f-8ad6-482b-af81-613481bd6588" name="Default Changelist" comment="Added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/KmlUploadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/KmlUploadController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infra/KmlFileUploader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infra/KmlFileUploader.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +124,7 @@
       <workItem from="1584613941739" duration="4583000" />
       <workItem from="1584645831732" duration="5294000" />
       <workItem from="1584651512465" duration="14264000" />
-      <workItem from="1584701587692" duration="8628000" />
+      <workItem from="1584701587692" duration="10935000" />
     </task>
     <task id="LOCAL-00001" summary="upload kml files, save user information">
       <created>1584662491273</created>
@@ -198,11 +203,28 @@
       <option name="project" value="LOCAL" />
       <updated>1584734391499</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="updated tests">
+      <created>1584734892140</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1584734892140</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -260,7 +282,8 @@
     <MESSAGE value="create a log of files uploaded, moved test files" />
     <MESSAGE value="upload KML file as Content-Type=application\xml" />
     <MESSAGE value="composer update" />
-    <option name="LAST_COMMIT_MESSAGE" value="composer update" />
+    <MESSAGE value="updated tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

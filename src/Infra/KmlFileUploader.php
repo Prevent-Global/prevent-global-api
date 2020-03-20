@@ -62,7 +62,9 @@ class KmlFileUploader
             $fp = fopen($uploadDir . $fileName,"wb");
             fwrite($fp, $fileContent);
             fclose($fp);
+
             $this->logger->info("KML File uploaded");
+            $this->raiseFileUploadedEvent($uploadDir, $fileName);
 
         } catch (\Exception $e) {
 
@@ -94,6 +96,8 @@ class KmlFileUploader
         try {
             $uploadDir = $this->uploadDir . '/' . $userId . '/';
             $file->move($uploadDir, $newFilename);
+
+            $this->logger->info("KML File uploaded");
             $this->raiseFileUploadedEvent($uploadDir, $newFilename);
 
         } catch (FileException $e) {
