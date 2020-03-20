@@ -24,7 +24,7 @@ jobs:
       run: composer install --prefer-dist --no-progress --no-suggest
 
     - name: Run php server
-      run: php -S localhost:8002 -t public_html/ &
+      run: php -S localhost:8000 -t public_html/ &
       
     - name: Run Postman Tests
       run: newman run tests/newman/postman_collection.json -e tests/newman/localhost.postman_environment.json
