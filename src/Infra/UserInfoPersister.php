@@ -45,7 +45,7 @@ class UserInfoPersister
             $fp = fopen($this->uploadDir . '/' . $userInfo->getId() . "/userInfo.json","wb");
             fwrite($fp, json_encode($userInfo));
             fclose($fp);
-            $this->logger->info("KML File uploaded");
+            $this->logger->info("New user information registered");
 
         } catch (\Exception $e) {
 

@@ -37,6 +37,42 @@ class KmlFileUploader
 
     /**
      * @param string $userId
+     * @param string $fileContent
+     * @throws NotKmlFileException
+     * @throws UserNotRegistered
+     */
+    public function saveString(string $userId, string $fileContent): void
+    {
+        $this->ValidateUserExists($userId);
+
+        $xmlDocument = new \XMLReader();
+        $xmlDocument->XML($fileContent);
+        $xmlDocument->setParserProperty(\XMLReader::VALIDATE, true);
+
+        if(!$xmlDocument->isValid()) {
+            throw new NotKmlFileException();
+        }
+
+        $fileName = uniqid() . '.' . self::KML_FILE_EXTENSION;
+
+        // Move the file to the directory where kml files are stored
+        try {
+            $uploadDir = $this->uploadDir . '/' . $userId . '/';
+
+            $fp = fopen($uploadDir . $fileName,"wb");
+            fwrite($fp, $fileContent);
+            fclose($fp);
+            $this->logger->info("KML File uploaded");
+
+        } catch (\Exception $e) {
+
+            $this->logger->error("Error while uploading a KML file", ['exception' => $e]);
+
+            throw $e;
+        }
+    }
+    /**
+     * @param string $userId
      * @param UploadedFile $file
      * @throws NotKmlFileException
      * @throws UserNotRegistered
