@@ -23,30 +23,22 @@ class KmlFileUploader
      * @var string
      */
     private $uploadDir;
+    /**
+     * @var string
+     */
+    private $queueFile;
 
     public function __construct(LoggerInterface $logger, ContainerBagInterface $params)
     {
         $this->logger = $logger;
         $this->uploadDir = $params->get(self::KML_FILES_DIRECTORY_PARAM);
+        $this->queueFile = $params->get(self::KML_FILES_DIRECTORY_PARAM) . "/uploadedFiles.csv";
     }
 
     /**
      * @param string $userId
-     * @throws UserNotRegistered
-     */
-    private function ValidateUserExists(string $userId): void
-    {
-        $fileSystem = new Filesystem();
-
-        if (!$fileSystem->exists($this->uploadDir . '/' . $userId . '/' . 'userInfo.json')) {
-            throw new UserNotRegistered("UserInfo file is missing");
-        };
-    }
-
-    /**
      * @param UploadedFile $file
      * @throws NotKmlFileException
-     * @throws FileException
      * @throws UserNotRegistered
      */
     public function saveFile(string $userId, UploadedFile $file): void
@@ -64,10 +56,9 @@ class KmlFileUploader
 
         // Move the file to the directory where kml files are stored
         try {
-            $file->move(
-                $this->uploadDir . '/' . $userId . '/',
-                $newFilename
-            );
+            $uploadDir = $this->uploadDir . '/' . $userId . '/';
+            $file->move($uploadDir, $newFilename);
+            $this->raiseFileUploadedEvent($uploadDir, $newFilename);
 
         } catch (FileException $e) {
 
@@ -75,5 +66,30 @@ class KmlFileUploader
 
             throw $e;
         }
+    }
+
+    /**
+     * @param string $userId
+     * @throws UserNotRegistered
+     */
+    private function ValidateUserExists(string $userId): void
+    {
+        $fileSystem = new Filesystem();
+
+        if (!$fileSystem->exists($this->uploadDir . '/' . $userId . '/' . 'userInfo.json')) {
+            throw new UserNotRegistered("UserInfo file is missing");
+        };
+    }
+
+    private function raiseFileUploadedEvent(string $uploadDir, string $filename)
+    {
+        $fs = new Filesystem();
+
+        if (!$fs->exists($this->queueFile)) {
+            $fs->appendToFile($this->queueFile, "timestamp,path". PHP_EOL);
+        }
+
+        $now = new \DateTime('now');
+        $fs->appendToFile($this->queueFile, sprintf("%s,%s/%s" . PHP_EOL, $now->getTimestamp(), $uploadDir, $filename));
     }
 }

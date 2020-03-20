@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "31a6b54b-9eb0-4922-8397-d6162fa70dfb",
+		"_postman_id": "7c4532d2-7507-457e-81a2-60002ac1c0e0",
 		"name": "Prevent.Global Mobile API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -62,7 +62,7 @@
 						"id": "fc293dc6-b415-478c-8f3a-e10c512b721f",
 						"exec": [
 							"",
-							"pm.test(\"Creates User With Id\", function () {",
+							"pm.test(\"File uploaded\", function () {",
 							"    pm.response.to.have.status(201);",
 							"});"
 						],
@@ -85,7 +85,7 @@
 						{
 							"key": "locationHistory",
 							"type": "file",
-							"src": "testData/history-2016-10-17.kml"
+							"src": "history-2016-10-17.kml"
 						},
 						{
 							"key": "userId",

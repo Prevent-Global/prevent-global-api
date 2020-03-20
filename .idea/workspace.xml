@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2523689f-8ad6-482b-af81-613481bd6588" name="Default Changelist" comment="upload kml files, save user information">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ftp-deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ftp-deploy.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prevent-global-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prevent-global-api.iml" afterDir="false" />
+    <list default="true" id="2523689f-8ad6-482b-af81-613481bd6588" name="Default Changelist" comment="create a log of files uploaded">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Infra/KmlFileUploader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Infra/KmlFileUploader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Localhost.postman_environment.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/newman/localhost.postman_environment.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Prevent.Global Mobile API.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/newman/postman_collection.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Prevent.Global Zenbox.postman_environment.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/newman/zenbox.postman_environment.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/testData/history-2016-10-17.kml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/newman/history-2016-10-17.kml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +32,7 @@
       <server host="127.0.0.1" id="710bc0dd-92a9-4a2d-891b-aab9ac282586" name="127.0.0.1 (2)" port="33303" />
       <server host="127.0.0.1" id="3f03363f-a010-4b78-8d0d-7639a30fe30b" name="127.0.0.1 (3)" port="37549" />
       <server host="127.0.0.1" id="4a3f9554-35bd-4ff0-9406-ef1b6bfcb1f8" name="127.0.0.1 (4)" port="44005" />
+      <server host="127.0.0.1" id="53b20189-a090-4934-be10-91c386af72ea" name="127.0.0.1 (5)" port="36769" />
     </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -96,6 +96,8 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/newman" />
+      <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -124,7 +126,7 @@
       <workItem from="1584613941739" duration="4583000" />
       <workItem from="1584645831732" duration="5294000" />
       <workItem from="1584651512465" duration="14264000" />
-      <workItem from="1584701587692" duration="336000" />
+      <workItem from="1584701587692" duration="3903000" />
     </task>
     <task id="LOCAL-00001" summary="upload kml files, save user information">
       <created>1584662491273</created>
@@ -175,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584701803367</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="updated files for consistency">
+      <created>1584701979414</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1584701979414</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +241,9 @@
     <MESSAGE value="updated tests, readme" />
     <MESSAGE value="fixing composer.json to be valid" />
     <MESSAGE value="added files to be deployed" />
-    <option name="LAST_COMMIT_MESSAGE" value="added files to be deployed" />
+    <MESSAGE value="updated files for consistency" />
+    <MESSAGE value="create a log of files uploaded" />
+    <option name="LAST_COMMIT_MESSAGE" value="create a log of files uploaded" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -245,7 +256,7 @@
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Controller/KmlUploadController.php</url>
           <line>22</line>
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
