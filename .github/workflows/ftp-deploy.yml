@@ -29,7 +29,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
         # Deployment destination server & path. Formatted as protocol://domain.com:port/full/destination/path/
-        ftp-server: ${{secrets.ftpServer_url}}
+        ftp-server: ftp://${{secrets.ftpServer_url}}
         # FTP account username
         ftp-username: ${{secrets.ftpServer_user}}
         # FTP account password
