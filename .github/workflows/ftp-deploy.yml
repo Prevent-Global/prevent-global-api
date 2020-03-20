@@ -20,6 +20,19 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
 
+    - name: Run php server
+      run: php -S localhost:8002 -t public_html/ &
+   
+    - name: Run Postman Tests
+      uses: matt-ball/newman-action@0.0.28
+      with:
+        collection:  tests/newman/postman_collection.json
+        environment: tests/newman/postman_environment.json
+        workingDir:  tests/newman/  
+   
+    - name: Stop php server
+      run: killall php
+
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
