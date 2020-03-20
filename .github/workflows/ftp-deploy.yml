@@ -27,7 +27,7 @@ jobs:
       run: php -S localhost:8002 -t public_html/ &
       
     - name: Run Postman Tests
-      run: pwd && newman run tests/newman/postman_collection.json -e tests/newman/postman_environment.json
+      run: newman run tests/newman/postman_collection.json -e tests/newman/localhost.postman_environment.json
       
     - name: Stop php server
       run: killall php
