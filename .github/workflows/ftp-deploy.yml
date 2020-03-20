@@ -14,6 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Install Newman
+      run: npm install -g newman
+
     - name: Validate composer.json and composer.lock
       run: composer validate
 
@@ -22,14 +25,10 @@ jobs:
 
     - name: Run php server
       run: php -S localhost:8002 -t public_html/ &
-   
+      
     - name: Run Postman Tests
-      uses: matt-ball/newman-action@0.0.28
-      with:
-        collection:  tests/newman/postman_collection.json
-        environment: tests/newman/postman_environment.json
-        workingDir:  tests/newman/  
-   
+      run: newman run tests/newman/postman_collection.json -e tests/newman/postman_environment.json
+      
     - name: Stop php server
       run: killall php
 
