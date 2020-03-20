@@ -119,7 +119,7 @@
       <workItem from="1584613941739" duration="4583000" />
       <workItem from="1584645831732" duration="5294000" />
       <workItem from="1584651512465" duration="14264000" />
-      <workItem from="1584701587692" duration="8151000" />
+      <workItem from="1584701587692" duration="8628000" />
     </task>
     <task id="LOCAL-00001" summary="upload kml files, save user information">
       <created>1584662491273</created>
@@ -191,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584734185086</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="composer update">
+      <created>1584734391499</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1584734391499</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +259,8 @@
     <MESSAGE value="create a log of files uploaded" />
     <MESSAGE value="create a log of files uploaded, moved test files" />
     <MESSAGE value="upload KML file as Content-Type=application\xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload KML file as Content-Type=application\xml" />
+    <MESSAGE value="composer update" />
+    <option name="LAST_COMMIT_MESSAGE" value="composer update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

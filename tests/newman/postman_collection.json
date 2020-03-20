@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "7c4532d2-7507-457e-81a2-60002ac1c0e0",
+		"_postman_id": "1882cf78-656e-4fae-a268-f1d5f376a003",
 		"name": "Prevent.Global Mobile API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -62,7 +62,7 @@
 						"id": "fc293dc6-b415-478c-8f3a-e10c512b721f",
 						"exec": [
 							"",
-							"pm.test(\"File uploaded\", function () {",
+							"pm.test(\"Creates User With Id\", function () {",
 							"    pm.response.to.have.status(201);",
 							"});"
 						],
@@ -75,24 +75,18 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "multipart/form-data",
+						"type": "text",
+						"value": "application/xml"
+					},
+					{
+						"key": "X-UserId",
+						"value": "{{userId}}",
 						"type": "text"
 					}
 				],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "locationHistory",
-							"type": "file",
-							"src": "history-2016-10-17.kml"
-						},
-						{
-							"key": "userId",
-							"value": "{{userId}}",
-							"type": "text"
-						}
-					]
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><kml xmlns=\"http://www.opengis.net/kml/2.2\" xmlns:gx=\"http://www.google.com/kml/ext/2.2\"><Document><name> Location history from 2017-04-16 to 2017-04-16 </name><open>1</open><description></description><StyleMap id=\"multiTrack\"><Pair><key>normal</key><styleUrl>#multiTrack_n</styleUrl></Pair><Pair><key>highlight</key><styleUrl>#multiTrack_h</styleUrl></Pair></StyleMap><Style id=\"multiTrack_n\"><IconStyle><Icon><href>https://earth.google.com/images/kml-icons/track-directional/track-0.png</href></Icon></IconStyle><LineStyle><color>99ffac59</color><width>6</width></LineStyle></Style><Style id=\"multiTrack_h\"><IconStyle><scale>1.2</scale><Icon><href>https://earth.google.com/images/kml-icons/track-directional/track-0.png</href></Icon></IconStyle><LineStyle><color>99ffac59</color><width>8</width></LineStyle></Style></Document></kml>"
 				},
 				"url": {
 					"raw": "{{serverUrl}}api/kml/upload",
