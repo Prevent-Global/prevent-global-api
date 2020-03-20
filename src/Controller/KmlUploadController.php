@@ -24,16 +24,16 @@ class KmlUploadController
             $userId = $request->get("userId");
 
             if (!$file) {
-                return new Response(null, Response::HTTP_BAD_REQUEST);
+                return new Response(json_encode(["error" => "Expected KML file missing"]), Response::HTTP_BAD_REQUEST);
             }
             $kmlFileUploader->saveFile($userId, $file);
             return new Response(null, Response::HTTP_CREATED);
 
         } catch (NotKmlFileException $e) {
-            return new Response(null, Response::HTTP_BAD_REQUEST);
+            return new Response(json_encode(["error" => "File is not a valid KML file"]), Response::HTTP_BAD_REQUEST);
 
         } catch (FileException $e) {
-            return new Response(null, Response::HTTP_INTERNAL_SERVER_ERROR);
+            return new Response(json_encode(["error" => "Error occurred while saving the file"]), Response::HTTP_INTERNAL_SERVER_ERROR);
 
         }
     }

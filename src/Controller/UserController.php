@@ -33,10 +33,10 @@ class UserController
             return $response;
 
         } catch (\InvalidArgumentException $e) {
-            return new Response(null, Response::HTTP_BAD_REQUEST);
+            return new Response(json_encode(["error" => "Invalid argument"]), Response::HTTP_BAD_REQUEST);
 
         } catch (\Exception $e) {
-            return new Response(null, Response::HTTP_INTERNAL_SERVER_ERROR);
+            return new Response(json_encode(["error" => "Unhandled error"]), Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
 }
