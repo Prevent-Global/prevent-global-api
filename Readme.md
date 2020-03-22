@@ -1,4 +1,4 @@
-# Prevent.Global Mobile App Api
+# Privent Mobile App Api
 
 ![Deploy to Zenbox](https://github.com/Kocik/prevent-global-api/workflows/Deploy%20to%20Zenbox/badge.svg)
 
